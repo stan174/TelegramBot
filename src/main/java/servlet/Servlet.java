@@ -18,7 +18,7 @@ public class Servlet extends HttpServlet {
 //        PensionerDAOImpl pens = new PensionerDAOImpl();
 //        String address = pens.getAddress(id);
 //        System.out.println(address);
-//        bot.sendMessage(address,1L);
+//        bot.sendMessageWithLocation(address,1L);
 
 
     }

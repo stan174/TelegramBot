@@ -50,7 +50,7 @@ public class Main {
             e.printStackTrace();
         }
         System.out.println("bot started");
-        tgBot.sendMessage("test", 146601835L);
+//        tgBot.sendMessageWithLocation("test", 146601835L);
 
 
 
