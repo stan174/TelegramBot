@@ -4,7 +4,6 @@ package dao;
 import model.Pensioner;
 import model.Volunteer;
 import org.hibernate.HibernateException;
-import org.hibernate.Query;
 import org.hibernate.Session;
 import util.DbHelper;
 

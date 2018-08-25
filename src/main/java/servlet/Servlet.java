@@ -1,22 +1,25 @@
 package servlet;
 
-import Bot.SimpleBot;
+import bot.SimpleBot;
+import dao.PensionerDAOImpl;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 
 public class Servlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request,
                       HttpServletResponse response)  {
-       String ids = request.getParameter("address");
-//        Long id = Long.parseLong(ids);
-        SimpleBot bot = new SimpleBot();
-//        bot.sendMessage(ids,id);
+       Long id = Long.parseLong(request.getParameter("pensionerId"));
+//        SimpleBot bot = new SimpleBot();
+        System.out.println(id);
+//        PensionerDAOImpl pens = new PensionerDAOImpl();
+//        String address = pens.getAddress(id);
+//        System.out.println(address);
+//        bot.sendMessage(address,1L);
+
 
     }
 

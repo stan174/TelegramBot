@@ -1,11 +1,9 @@
-package Bot;
+package bot;
 
 import org.telegram.telegrambots.bots.DefaultBotOptions;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendLocation;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
-import org.telegram.telegrambots.meta.api.objects.Location;
-import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
@@ -25,7 +23,7 @@ public class SimpleBot extends TelegramLongPollingBot {
         super();
     }
 
-    public void sendMessage(String msg, Long chatId){
+    public void sendMessage(String msg,long chatId){
         SendMessage message = new SendMessage() // Create a message object object
                 .setChatId(chatId)
                 .setText(msg);
@@ -66,11 +64,13 @@ public class SimpleBot extends TelegramLongPollingBot {
 
                 SendMessage message = new SendMessage() // Create a message object object
                         .setChatId(chatId)
-                        .setText("Срочно нужна помощь человеку!");
+                        .setText("Добро пожаловать в приложение  <Помоги Пенсионеру>  Зарегестрируйтесь, если вы зашли первый раз");
                 InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
                 List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
                 List<InlineKeyboardButton> rowInline = new ArrayList<>();
-                rowInline.add(new InlineKeyboardButton().setText("Я помогу БаБулЕ!").setCallbackData("update_msg_text"));
+                rowInline.add(new InlineKeyboardButton().setText("Регистрация").setCallbackData("update_msg_text"));
+                rowInline.add(new InlineKeyboardButton().setText("Онлайн").setCallbackData("update_msg_text2"));
+
                 // Set the keyboard to the markup
                 rowsInline.add(rowInline);
                 // Add it to the message
@@ -84,12 +84,12 @@ public class SimpleBot extends TelegramLongPollingBot {
 
                 try {
                     // - этот код отправляет геопозицию
-                    Float lat = 59.9418720f, lng = 30.2655820f;
-                    SendLocation sendLocation = new SendLocation(lat, lng);
-                    sendLocation.setChatId(chatId);
-                    // - конец кода
-
-                    execute(sendLocation);
+//                    Float lat = 59.9418720f, lng = 30.2655820f;
+//                    SendLocation sendLocation = new SendLocation(lat, lng);
+//                    sendLocation.setChatId(chatId);
+//                    // - конец кода
+//
+//                    execute(sendLocation);
                     execute(message); // Call method to send the message
                 } catch (TelegramApiException e) {
                     e.printStackTrace();

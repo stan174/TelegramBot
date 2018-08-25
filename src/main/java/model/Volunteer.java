@@ -1,6 +1,8 @@
 package model;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.io.Serializable;
 
 
@@ -14,6 +16,9 @@ public class Volunteer extends User implements Serializable { // Serializable Im
 
     @Column(name = "rank_col", unique = false, updatable = false)
     public String rank;
+
+    @Column(name = "chat_id", unique = true, updatable = false)
+    public String chatId;
 
     public boolean isStatus() {
         return status;

@@ -4,13 +4,11 @@ import model.Pensioner;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import util.DbHelper;
 
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.List;
 
 
@@ -87,6 +85,15 @@ public class PensionerDAOImpl implements PensionerDAO {
     public String getAddressByPhone(String phoneNumber) throws HibernateException {
         Session session = DbHelper.getSessionFactory().openSession();
         Pensioner pensioner = (Pensioner)session.load(String.class, phoneNumber);
+        String address = pensioner.getAddress();
+        session.close();
+        return address;
+    }
+
+    @Override
+    public String getAddress(long id) throws HibernateException {
+        Session session = DbHelper.getSessionFactory().openSession();
+        Pensioner pensioner = (Pensioner)session.load(String.class, id);
         String address = pensioner.getAddress();
         session.close();
         return address;

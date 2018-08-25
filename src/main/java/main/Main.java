@@ -1,4 +1,6 @@
-import Bot.SimpleBot;
+package main;
+
+import bot.SimpleBot;
 import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.handler.HandlerList;
@@ -47,7 +49,7 @@ public class Main {
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
-        System.out.println("Bot started");
+        System.out.println("bot started");
         tgBot.sendMessage("test", 146601835L);
 
 

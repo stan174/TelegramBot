@@ -9,7 +9,7 @@ import java.util.Collection;
 public interface VolunteerDAO {
 
     Volunteer getVolunteer(long id) throws HibernateException;
-    public long getID(Volunteer volunteer) throws  HibernateException;
+    public long getID(Volunteer volunteer) throws HibernateException;
 
     public void addVolunteer(Volunteer volunteer) throws HibernateException;
 
@@ -19,6 +19,6 @@ public interface VolunteerDAO {
     public void delateVolunteer(Volunteer volunteer) throws HibernateException;
 
     public Volunteer getVolunteerByStatus(boolean status) throws HibernateException;
-    public String getVolunteerByRank (String rank) throws HibernateException;
+    public String getVolunteerByRank(String rank) throws HibernateException;
 
 }
